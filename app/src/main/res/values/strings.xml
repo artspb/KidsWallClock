@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Kids Wall Clock</string>
+    <string name="title_activity_kids_wall_clock_settings">KidsWallClockSettingsActivity</string>
+</resources>

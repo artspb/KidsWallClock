@@ -1,0 +1,7 @@
+<resources>
+
+    <declare-styleable name="PreferenceTheme">
+        <attr name="rangeSeekBarPreferenceStyle" format="reference" />
+    </declare-styleable>
+
+</resources>

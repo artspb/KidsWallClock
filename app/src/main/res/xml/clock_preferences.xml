@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--suppress AndroidUnknownAttribute -->
+    <me.artspb.android.kids.wall.clock.preference.TimeDialogPreference
+        style="@style/AppPreference.DialogPreference"
+        app:defaultValue="480"
+        app:key="beginning_of_day"
+        app:title="Beginning of Day" />
+
+    <!--suppress AndroidUnknownAttribute -->
+    <me.artspb.android.kids.wall.clock.preference.TimeDialogPreference
+        style="@style/AppPreference.DialogPreference"
+        app:defaultValue="1260"
+        app:key="end_of_day"
+        app:title="End of Day" />
+
+</PreferenceScreen>
