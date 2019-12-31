@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--suppress AndroidUnknownAttribute -->
     <me.artspb.android.kids.wall.clock.preference.TimeDialogPreference
@@ -13,5 +14,65 @@
         app:defaultValue="1260"
         app:key="end_of_day"
         app:title="End of Day" />
+
+    <PreferenceCategory android:title="Night Colors">
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorNightText"
+            app:key="night_text_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Text Color" />
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorNightBackground"
+            app:key="night_background_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Background Color" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dusk Colors">
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorDuskText"
+            app:key="dusk_text_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Text Color" />
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorDuskBackground"
+            app:key="dusk_background_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Background Color" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Day Colors">
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorDayText"
+            app:key="day_text_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Text Color" />
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorDayBackground"
+            app:key="day_background_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Background Color" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dawn Colors">
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorDawnText"
+            app:key="dawn_text_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Text Color" />
+        <me.artspb.android.kids.wall.clock.preference.ColorPickerPreference
+            app:defaultValue="@color/colorDawnBackground"
+            app:key="dawn_background_color"
+            app:negativeButtonText="@android:string/cancel"
+            app:positiveButtonText="@android:string/ok"
+            app:title="Background Color" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

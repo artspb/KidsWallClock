@@ -4,10 +4,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.graphics.Color
 import android.service.dreams.DreamService
 import android.view.View
 import android.widget.TextClock
+import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import java.util.*
 
@@ -55,23 +55,56 @@ class ClockDreamService : DreamService() {
         setColors(Calendar.getInstance().toDay(start, end))
     }
 
-    private fun setColors(day: Day) = when (day) {
-        Day.NIGHT -> {
-            clock.setTextColor(Color.parseColor("#060607"))
-            clock.setBackgroundColor(Color.parseColor("#484e52"))
+    private fun setColors(day: Day) {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val (text, background) = when (day) {
+            Day.NIGHT -> {
+                val text = preferences.getInt(
+                    "night_text_color",
+                    ContextCompat.getColor(this, R.color.colorNightText)
+                )
+                val background = preferences.getInt(
+                    "night_background_color",
+                    ContextCompat.getColor(this, R.color.colorNightBackground)
+                )
+                Pair(text, background)
+            }
+            Day.DUSK -> {
+                val text = preferences.getInt(
+                    "dusk_text_color",
+                    ContextCompat.getColor(this, R.color.colorDuskText)
+                )
+                val background = preferences.getInt(
+                    "dusk_background_color",
+                    ContextCompat.getColor(this, R.color.colorDuskBackground)
+                )
+                Pair(text, background)
+            }
+            Day.DAY -> {
+                val text = preferences.getInt(
+                    "day_text_color",
+                    ContextCompat.getColor(this, R.color.colorDayText)
+                )
+                val background = preferences.getInt(
+                    "day_background_color",
+                    ContextCompat.getColor(this, R.color.colorDayBackground)
+                )
+                Pair(text, background)
+            }
+            Day.DAWN -> {
+                val text = preferences.getInt(
+                    "dawn_text_color",
+                    ContextCompat.getColor(this, R.color.colorDawnText)
+                )
+                val background = preferences.getInt(
+                    "dawn_background_color",
+                    ContextCompat.getColor(this, R.color.colorDawnBackground)
+                )
+                Pair(text, background)
+            }
         }
-        Day.DUSK -> {
-            clock.setTextColor(Color.parseColor("#001244"))
-            clock.setBackgroundColor(Color.parseColor("#005086"))
-        }
-        Day.DAY -> {
-            clock.setTextColor(Color.parseColor("#475808"))
-            clock.setBackgroundColor(Color.parseColor("#9ab031"))
-        }
-        Day.DAWN -> {
-            clock.setTextColor(Color.parseColor("#dc8998"))
-            clock.setBackgroundColor(Color.parseColor("#718ec4"))
-        }
+        clock.setTextColor(text)
+        clock.setBackgroundColor(background)
     }
 
     override fun onDreamingStopped() {

@@ -4,5 +4,12 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="black_overlay">#66000000</color>
+    <color name="colorNightText">#FFFFFF</color>
+    <color name="colorNightBackground">#000000</color>
+    <color name="colorDuskText">#FFFFFF</color>
+    <color name="colorDuskBackground">#000000</color>
+    <color name="colorDayText">#000000</color>
+    <color name="colorDayBackground">#FFFFFF</color>
+    <color name="colorDawnText">#000000</color>
+    <color name="colorDawnBackground">#FFFFFF</color>
 </resources>
