@@ -49,10 +49,19 @@ class ClockDreamService : DreamService() {
     }
 
     private fun setColors() {
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val start = preferences.getInt("beginning_of_day", 480).toDate()
-        val end = preferences.getInt("end_of_day", 1260).toDate()
-        setColors(Calendar.getInstance().toDay(start, end))
+        val sharedPreferences = getSharedPreferences(packageName, Context.MODE_PRIVATE)
+        val day = sharedPreferences.getString("day", null)
+        if (day != null) {
+            val editor = sharedPreferences.edit()
+            editor.putString("day", null)
+            editor.apply()
+            setColors(Day.valueOf(day))
+        } else {
+            val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+            val start = preferences.getInt("beginning_of_day", 480).toDate()
+            val end = preferences.getInt("end_of_day", 1260).toDate()
+            setColors(Calendar.getInstance().toDay(start, end))
+        }
     }
 
     private fun setColors(day: Day) {

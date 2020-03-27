@@ -28,6 +28,19 @@
             app:negativeButtonText="@android:string/cancel"
             app:positiveButtonText="@android:string/ok"
             app:title="Background Color" />
+        <Preference
+            android:key="preview_night"
+            android:title="Preview Night">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="me.artspb.android.kids.wall.clock.ClockMainActivity"
+                android:targetPackage="me.artspb.android.kids.wall.clock">
+                <!--suppress AndroidElementNotAllowed -->
+                <extra
+                    android:name="Day"
+                    android:value="NIGHT" />
+            </intent>
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Dusk Colors">
@@ -43,6 +56,19 @@
             app:negativeButtonText="@android:string/cancel"
             app:positiveButtonText="@android:string/ok"
             app:title="Background Color" />
+        <Preference
+            android:key="preview_dusk"
+            android:title="Preview Dusk">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="me.artspb.android.kids.wall.clock.ClockMainActivity"
+                android:targetPackage="me.artspb.android.kids.wall.clock">
+                <!--suppress AndroidElementNotAllowed -->
+                <extra
+                    android:name="Day"
+                    android:value="DUSK" />
+            </intent>
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Day Colors">
@@ -58,6 +84,19 @@
             app:negativeButtonText="@android:string/cancel"
             app:positiveButtonText="@android:string/ok"
             app:title="Background Color" />
+        <Preference
+            android:key="preview_day"
+            android:title="Preview Day">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="me.artspb.android.kids.wall.clock.ClockMainActivity"
+                android:targetPackage="me.artspb.android.kids.wall.clock">
+                <!--suppress AndroidElementNotAllowed -->
+                <extra
+                    android:name="Day"
+                    android:value="DAY" />
+            </intent>
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Dawn Colors">
@@ -73,6 +112,19 @@
             app:negativeButtonText="@android:string/cancel"
             app:positiveButtonText="@android:string/ok"
             app:title="Background Color" />
+        <Preference
+            android:key="preview_night"
+            android:title="Preview Dawn">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="me.artspb.android.kids.wall.clock.ClockMainActivity"
+                android:targetPackage="me.artspb.android.kids.wall.clock">
+                <!--suppress AndroidElementNotAllowed -->
+                <extra
+                    android:name="Day"
+                    android:value="DAWN" />
+            </intent>
+        </Preference>
     </PreferenceCategory>
 
 </PreferenceScreen>
