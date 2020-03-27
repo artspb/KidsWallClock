@@ -41,10 +41,11 @@ class ClockDreamService : DreamService() {
 
     override fun onDreamingStarted() {
         super.onDreamingStarted()
-        val filter = IntentFilter()
-        filter.addAction(Intent.ACTION_TIME_TICK)
-        filter.addAction(Intent.ACTION_TIME_CHANGED)
-        filter.addAction(Intent.ACTION_TIMEZONE_CHANGED)
+        val filter = IntentFilter().apply {
+            addAction(Intent.ACTION_TIME_TICK)
+            addAction(Intent.ACTION_TIME_CHANGED)
+            addAction(Intent.ACTION_TIMEZONE_CHANGED)
+        }
         registerReceiver(broadcastReceiver, filter)
     }
 
