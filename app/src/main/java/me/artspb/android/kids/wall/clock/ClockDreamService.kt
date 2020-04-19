@@ -59,8 +59,8 @@ class ClockDreamService : DreamService() {
             setColors(Day.valueOf(day))
         } else {
             val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-            val start = preferences.getInt("beginning_of_day", 480).toDate()
-            val end = preferences.getInt("end_of_day", 1260).toDate()
+            val start = preferences.getInt("beginning_of_day", combine(8, 0)).toDate()
+            val end = preferences.getInt("end_of_day", combine(19, 0)).toDate()
             setColors(Calendar.getInstance().toDay(start, end))
         }
     }
